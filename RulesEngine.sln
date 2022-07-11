@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31717.71
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1831
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RulesEngine", "src\RulesEngine\RulesEngine.csproj", "{CD4DFE6A-083B-478E-8377-77F474833E30}"
 EndProject
@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RulesEngineBenchmark", "ben
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.EFDataExample", "demo\DemoApp.EFDataExample\DemoApp.EFDataExample.csproj", "{E376D3E6-6890-4C09-9EA0-3EFD9C1E036D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAI.RulesEngine", "RAI.RulesEngine\RAI.RulesEngine.csproj", "{3D95D1B8-DC55-44B0-831E-795AFB0105F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAI.RulesEngine.UnitTest", "RAI.RulesEngine.UnitTest\RAI.RulesEngine.UnitTest.csproj", "{5C301DFC-1CF2-42AA-B307-E78F28CF0871}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{E376D3E6-6890-4C09-9EA0-3EFD9C1E036D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E376D3E6-6890-4C09-9EA0-3EFD9C1E036D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E376D3E6-6890-4C09-9EA0-3EFD9C1E036D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D95D1B8-DC55-44B0-831E-795AFB0105F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D95D1B8-DC55-44B0-831E-795AFB0105F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D95D1B8-DC55-44B0-831E-795AFB0105F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D95D1B8-DC55-44B0-831E-795AFB0105F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C301DFC-1CF2-42AA-B307-E78F28CF0871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C301DFC-1CF2-42AA-B307-E78F28CF0871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C301DFC-1CF2-42AA-B307-E78F28CF0871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C301DFC-1CF2-42AA-B307-E78F28CF0871}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
