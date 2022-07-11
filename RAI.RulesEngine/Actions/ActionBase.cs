@@ -10,7 +10,7 @@ namespace RulesEngine.Actions
 {
     public abstract class ActionBase
     {
-        internal async virtual Task<ActionRuleResult> ExecuteAndReturnResultAsync(ActionContext context, RuleParameter[] ruleParameters, bool includeRuleResults = false)
+        internal async virtual ValueTask<ActionRuleResult> ExecuteAndReturnResultAsync(ActionContext context, RuleParameter[] ruleParameters, bool includeRuleResults = false)
         {
             var result = new ActionRuleResult();
             try
@@ -33,6 +33,6 @@ namespace RulesEngine.Actions
             }
             return result;
         }
-        public abstract Task<object> Run(ActionContext context, RuleParameter[] ruleParameters);
+        public abstract ValueTask<object> Run(ActionContext context, RuleParameter[] ruleParameters);
     }
 }

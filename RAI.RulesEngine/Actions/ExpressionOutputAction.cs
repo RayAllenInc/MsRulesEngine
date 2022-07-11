@@ -16,10 +16,10 @@ namespace RulesEngine.Actions
             _ruleExpressionParser = ruleExpressionParser;
         }
 
-        public override Task<object> Run(ActionContext context, RuleParameter[] ruleParameters)
+        public override ValueTask<object> Run(ActionContext context, RuleParameter[] ruleParameters)
         {
             var expression = context.GetContext<string>("expression");
-            return Task.FromResult(_ruleExpressionParser.Evaluate<object>(expression, ruleParameters));
+            return new ValueTask<object>(_ruleExpressionParser.Evaluate<object>(expression, ruleParameters));
         }
     }
 }

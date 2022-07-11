@@ -80,7 +80,7 @@ namespace RulesEngine
         /// <param name="workflowName">The name of the workflow with rules to execute against the inputs</param>
         /// <param name="inputs">A variable number of inputs</param>
         /// <returns>List of rule results</returns>
-        public async Task<List<RuleResultTree>> ExecuteAllRulesAsync(string workflowName, params object[] inputs)
+        public async ValueTask<List<RuleResultTree>> ExecuteAllRulesAsync(string workflowName, params object[] inputs)
         {
             var ruleParams = new List<RuleParameter>();
 
@@ -99,14 +99,14 @@ namespace RulesEngine
         /// <param name="workflowName">The name of the workflow with rules to execute against the inputs</param>
         /// <param name="ruleParams">A variable number of rule parameters</param>
         /// <returns>List of rule results</returns>
-        public async Task<List<RuleResultTree>> ExecuteAllRulesAsync(string workflowName, params RuleParameter[] ruleParams)
+        public async ValueTask<List<RuleResultTree>> ExecuteAllRulesAsync(string workflowName, params RuleParameter[] ruleParams)
         {
             var ruleResultList = ValidateWorkflowAndExecuteRule(workflowName, ruleParams);
             await ExecuteActionAsync(ruleResultList);
             return ruleResultList;
         }
 
-        private async Task ExecuteActionAsync(IEnumerable<RuleResultTree> ruleResultList)
+        private async ValueTask ExecuteActionAsync(IEnumerable<RuleResultTree> ruleResultList)
         {
             foreach (var ruleResult in ruleResultList)
             {
@@ -122,14 +122,14 @@ namespace RulesEngine
             }
         }
 
-        public async Task<ActionRuleResult> ExecuteActionWorkflowAsync(string workflowName, string ruleName, RuleParameter[] ruleParameters)
+        public async ValueTask<ActionRuleResult> ExecuteActionWorkflowAsync(string workflowName, string ruleName, RuleParameter[] ruleParameters)
         {
             var compiledRule = CompileRule(workflowName, ruleName, ruleParameters);
             var resultTree = compiledRule(ruleParameters);
             return await ExecuteActionForRuleResult(resultTree, true);
         }
 
-        private async Task<ActionRuleResult> ExecuteActionForRuleResult(RuleResultTree resultTree, bool includeRuleResults = false)
+        private async ValueTask<ActionRuleResult> ExecuteActionForRuleResult(RuleResultTree resultTree, bool includeRuleResults = false)
         {
             var ruleActions = resultTree?.Rule?.Actions;
             var actionInfo = resultTree?.IsSuccess == true ? ruleActions?.OnSuccess : ruleActions?.OnFailure;

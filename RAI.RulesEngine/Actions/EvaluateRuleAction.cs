@@ -21,7 +21,7 @@ namespace RulesEngine.Actions
             _ruleExpressionParser = ruleExpressionParser;
         }
 
-        internal async override Task<ActionRuleResult> ExecuteAndReturnResultAsync(ActionContext context, RuleParameter[] ruleParameters, bool includeRuleResults = false)
+        internal async override ValueTask<ActionRuleResult> ExecuteAndReturnResultAsync(ActionContext context, RuleParameter[] ruleParameters, bool includeRuleResults = false)
         {
             var innerResult = await base.ExecuteAndReturnResultAsync(context, ruleParameters, includeRuleResults);
             var output = innerResult.Output as ActionRuleResult;
@@ -38,7 +38,7 @@ namespace RulesEngine.Actions
             };
         }
 
-        public async override Task<object> Run(ActionContext context, RuleParameter[] ruleParameters)
+        public async override ValueTask<object> Run(ActionContext context, RuleParameter[] ruleParameters)
         {
             var workflowName = context.GetContext<string>("workflowName");
             var ruleName = context.GetContext<string>("ruleName");
