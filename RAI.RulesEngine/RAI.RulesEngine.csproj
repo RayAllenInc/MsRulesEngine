@@ -73,6 +73,7 @@
     <Compile Include="Actions\ActionFactory.cs" />
     <Compile Include="Actions\EvaluateRuleAction.cs" />
     <Compile Include="Actions\ExpressionOutputAction.cs" />
+    <Compile Include="Actions\MultiAction.cs" />
     <Compile Include="CustomTypeProvider.cs" />
     <Compile Include="Exceptions\ExpressionParserException.cs" />
     <Compile Include="Exceptions\RuleException.cs" />
@@ -112,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="package.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
